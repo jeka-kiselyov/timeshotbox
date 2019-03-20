@@ -1,6 +1,6 @@
 {
   "name": "timeshotbox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Player for motion detection shots of your security camera backup on DropBox",
   "main": "index.js",
   "scripts": {

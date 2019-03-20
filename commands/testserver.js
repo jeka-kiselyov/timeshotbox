@@ -41,7 +41,7 @@ class Handler extends Command {
             server.addEvent(eventData);
         });
 
-
+        
         await server.init();
 
         await ds.getFreshFiles();

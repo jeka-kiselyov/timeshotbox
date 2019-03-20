@@ -59,6 +59,12 @@ class Server extends LovaClass { /// LovaClass is also EventEmmiter
 
         this._checkAuthIP = params.checkAuthIP;   /// restrict authCodes to work from same IP they were created from
         this._maxAuthCodeAge = params.maxAuthCodeAge; /// restrict authCode age to seconds
+
+        this._port = params.port || 8080;
+
+        this._enableLivereload = params.enableLivereload || false;
+        this._enableWebpackWatch = params.enableWebpackWatch || false;
+        this._enableWebpackBuild = params.enableWebpackBuild || false;
 	}
 
     log(str) {
@@ -101,7 +107,7 @@ class Server extends LovaClass { /// LovaClass is also EventEmmiter
             this._server.get('/api/channel/:channel/day/:day', this.asyncWrap(this.channelDay, true));
             this._server.get('/api/channel/:channel/day/:day/:filename', this.asyncWrap(this.channelDayFile, true));
 
-            this._server.listen(8080, ()=>{
+            this._server.listen(this._port, ()=>{
                 this.log(this._server.name+' listening at '+this._server.url);
                 resolve(true);
             });
@@ -112,6 +118,10 @@ class Server extends LovaClass { /// LovaClass is also EventEmmiter
     }
 
     async initLivereload() {
+        if (!this._enableLivereload) {
+            return false;
+        }
+
         let pathes = [];
 
         for (const [key, outData] of Object.entries(this._outData)) {
@@ -125,9 +135,17 @@ class Server extends LovaClass { /// LovaClass is also EventEmmiter
 
         if (pathes) {
             this.log("Setting up LiveReload server to watch on "+pathes.length+" pathes...");
-            const livereload = require('livereload');
-            const server = livereload.createServer();
-            server.watch(pathes);
+
+            try {
+                const livereload = require('livereload');
+                const server = livereload.createServer();
+                server.on('error', ()=>{
+                    this.log("Error initializing LiveReload server");                    
+                });
+                server.watch(pathes);
+            } catch(e) {
+                this.log("Error initializing LiveReload server");
+            }
         }
     }
 
@@ -137,9 +155,8 @@ class Server extends LovaClass { /// LovaClass is also EventEmmiter
             date: new Date()
         };
 
-        console.log(eventObject);
-
         this._events.push(eventObject);
+        this._events = this._events.slice(-1000); /// keep 1000 most recent events in memory
     }
 
     async events(req, res) {
@@ -316,7 +333,12 @@ class Server extends LovaClass { /// LovaClass is also EventEmmiter
         }
 
         try {
-            if (this._outData[name].webpack) {
+            if (this._outData[name].webpack && !this._enableWebpackBuild) {
+                /// if we are not using webpack - use already compiled code
+                this._outData[name].fileName = this._outData[name].compiledFileName;
+            }
+
+            if (this._outData[name].webpack && this._enableWebpackBuild) {
                 this.log("Compiling "+this._outData[name].fileName+" with webpack...");
 
                 let compilerOptions = require(path.join(__dirname, '../frontend/webpack.config.js'));
@@ -343,7 +365,7 @@ class Server extends LovaClass { /// LovaClass is also EventEmmiter
                 }  
 
 
-                if (this._outData[name].watch) {
+                if (this._outData[name].watch && this._enableWebpackWatch) {
                     const watching = compiler.watch({
                             // Example watchOptions
                             aggregateTimeout: 300,

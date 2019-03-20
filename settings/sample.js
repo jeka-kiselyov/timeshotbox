@@ -4,7 +4,8 @@ if (typeof __webpack_require__ === 'function') {
 
 module.exports = {
 	dropbox: {
-		accessToken: "DebXXXXXXXXXXXXDw",
+		accessToken: "DebXXXXXXXXXXXXDw", //// you can generate access token for your account: 
+										  //// https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/
 		rootPath: "/dvr/videomotion",
 		longPollTimeout: 60,
 		removeFolderRegex: "^\\/dvr\\/videomotion\\/[0-9]+$",
@@ -29,8 +30,12 @@ module.exports = {
 		]
 	},
 	server: {
-		checkAuthIP: true,
-		maxAuthCodeAge: 24*60*60,
+		enableLivereload: false,      /// enable LiveReload server. Set to true for dev env
+		enableWebpackWatch: false,    /// enable WebPack compiling. Set to true for dev env
+		enableWebpackBuild: false,    /// build frontend sources codes each start. Set to true for dev env
+		port: 9090,
+		checkAuthIP: true,			  /// tie auth to IP
+		maxAuthCodeAge: 24*60*60,     /// limit auth time
 		credentials: [
 			{
 	            username: 'admin',

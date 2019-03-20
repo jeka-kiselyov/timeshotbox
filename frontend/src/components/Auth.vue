@@ -71,9 +71,11 @@ export default {
 			this.$refs.usernameInput.focus();
 		});
 
-		setTimeout(()=>{
-			this.auth();
-		}, 50);
+		/// uncomment this for faster testing
+
+		// setTimeout(()=>{
+		// 	this.auth();
+		// }, 50);
 	},
 	watch: {
 		isAuthenticated: function(v) {
