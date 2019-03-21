@@ -2,9 +2,6 @@
 	<div id="app">
 		<auth v-if="!isAuthenticated" @authenticated="authenticated" ref="auth"></auth>
 		<div v-if="isAuthenticated">
-			<div class="sidebar_container">
-				<sidebar ref="sidebar" v-bind:height="sizes.screen.height"></sidebar>
-			</div>
 			<div class="monitor_container">
 				<screen ref="screen"  v-bind:width="sizes.screen.width" v-bind:height="sizes.screen.height"></screen>
 			</div>
@@ -72,9 +69,6 @@ export default {
 			this.$refs.controls.$on('pause', ()=>{
 				this.pause();
 			});
-			this.$refs.sidebar.$on('mode',(mode)=>{
-				this.$refs.screen.setMode(mode);
-			});
 			this.$refs.screen.$on('daysDone',()=>{
 				this.$refs.controls.setDaysWithData(this.$refs.screen.getDaysWithData());
 				this.restoreLastDate();
@@ -115,6 +109,7 @@ export default {
 			})();
 
 	        window.addEventListener('optimizedResize', this.recalculateWidth);
+	        window.addEventListener('orientationchange', this.recalculateWidth);
 		},
 		recalculateWidth: function() {
 			let size = {
@@ -122,7 +117,7 @@ export default {
 				height: document.documentElement.clientHeight
 			};
 
-			this.sizes.screen.width = size.width - 150;
+			this.sizes.screen.width = size.width;
 			this.sizes.screen.height = size.height - 150;
 
 			this.sizes.controls.height = 150;
@@ -130,7 +125,6 @@ export default {
 
 			this.$refs.controls.resizeTo(this.sizes.controls.width, 150);
 			this.$refs.screen.resizeTo(this.sizes.screen.width, this.sizes.screen.height);
-			this.$refs.sidebar.resizeTo(this.sizes.screen.width, this.sizes.screen.height);
 		},
 		hasShotsInTheFuture: function() {
 			return this.$refs.screen.hasShotsInTheFuture();
@@ -191,7 +185,7 @@ export default {
 				return date;
 			} else {
 				this.setDate(new Date());
-				
+
 				return null;
 			}
 		},
@@ -238,14 +232,7 @@ export default {
 		overflow: hidden;
 		top: 0; right: 0; bottom: 0; left: 0; 
 	}	
-	.sidebar_container {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 150px;
-	}
 	.monitor_container {
-		margin-left: 150px;
 	}
 
 	button {

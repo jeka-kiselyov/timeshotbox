@@ -76,7 +76,7 @@ export default {
 				height: this.$el ? this.$el.clientHeight : 0
 			};
 
-			size.width = size.width || parseInt(''+this.width, 10);
+			size.width = parseInt(''+this.width, 10);
 
 			this.widths.total = size.width;
 			// this.widths.playButton = 150;
