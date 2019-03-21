@@ -82,6 +82,11 @@ export default {
 		this.$refs.monitor2.$on('dayDone', debouncedDDayHandler);
 		this.$refs.monitor3.$on('dayDone', debouncedDDayHandler);
 		this.$refs.monitor4.$on('dayDone', debouncedDDayHandler);
+
+		this.$refs.monitor1.$on('click', () => { this.clickMonitor(1); });
+		this.$refs.monitor2.$on('click', () => { this.clickMonitor(2); });
+		this.$refs.monitor3.$on('click', () => { this.clickMonitor(3); });
+		this.$refs.monitor4.$on('click', () => { this.clickMonitor(4); });
 	},
 	watch: {
 		height: function() {
@@ -209,6 +214,13 @@ export default {
 		setMode: function(mode) {
 			this.mode = mode;
 			this.resizeTo();
+		},
+		clickMonitor: function(monitorI) {
+			if (this.mode == 0) {
+				this.setMode(monitorI);
+			} else {
+				this.setMode(0);
+			}
 		}
 	}
 }
@@ -216,5 +228,6 @@ export default {
 <style>
 	.screen {
 		position: relative;
+		cursor: pointer;
 	}
 </style>

@@ -5,7 +5,7 @@ if (typeof __webpack_require__ === 'function') {
 module.exports = {
 	dropbox: {
 		accessToken: "DebXXXXXXXXXXXXDw", //// you can generate access token for your account: 
-										  //// https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/
+		//// https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/
 		rootPath: "/dvr/videomotion",
 		longPollTimeout: 60,
 		removeFolderRegex: "^\\/dvr\\/videomotion\\/[0-9]+$",

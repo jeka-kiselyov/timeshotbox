@@ -4,6 +4,8 @@ const Spritesmith = require('spritesmith');
 
 const Shot = require('./Shot.js');
 
+const AsyncLimiter = require('./AsyncLimiter.js');
+
 class ChannelDay extends LovaClass { /// LovaClass is also EventEmmiter
     constructor(params = {}) {
         super(params);
@@ -147,6 +149,7 @@ class ChannelDay extends LovaClass { /// LovaClass is also EventEmmiter
 			}
 		}
 
+		await AsyncLimiter.start('sprite');
 		this.logger.debug('Creating sprite out of '+shots.length+' shots');
 
 		let promise = new Promise((resolve, reject)=>{
@@ -169,6 +172,7 @@ class ChannelDay extends LovaClass { /// LovaClass is also EventEmmiter
 			result = await promise;
 		} catch(e) {
 			this.logger.error(e);
+			await AsyncLimiter.end('sprite');
 			return false;
 		}
 
@@ -223,6 +227,8 @@ class ChannelDay extends LovaClass { /// LovaClass is also EventEmmiter
 
 			this.emit('sprited');        	
         }
+
+		await AsyncLimiter.end('sprite');
 
 		return true;
 	}

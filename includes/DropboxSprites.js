@@ -10,9 +10,16 @@ const Channel = require('./Channel.js');
 const path = require('path');
 const LocalFS = require('./fs/LocalFS.js');
 
+const AsyncLimiter = require('./AsyncLimiter.js');
+
+
 class DropboxSprites extends LovaClass { /// LovaClass is also EventEmmiter
     constructor(params) {
         super(params);
+
+        /// settings max parallel counts
+        AsyncLimiter.setMaxJobs('download', 8);
+        AsyncLimiter.setMaxJobs('sprite', 1);
 
         this._dropbox = null;
         this._isInitialized = false;
@@ -77,6 +84,12 @@ class DropboxSprites extends LovaClass { /// LovaClass is also EventEmmiter
         }
 
         return null;
+    }
+
+    async makeSpritesForAllPreviousDays() {
+        for (let channel of this._channels) {
+            await channel.makeSpritesForAllPreviousDays();
+        }
     }
 
     async sleep(ms) {

@@ -170,7 +170,8 @@ class Channel extends LovaClass { /// LovaClass is also EventEmmiter
 		if (addToChannelDays) {
 			if (!this._channelDays[shot.getDayString()]) {
 				/// if it's new ChannelDay - make sprites for all previous days
-				this.makeSpritesForAllPreviousDays();
+				// we can't as we are downloading async now in different order
+				// this.makeSpritesForAllPreviousDays();
 
 				this._channelDays[shot.getDayString()] = new ChannelDay({
 					dropboxSprites: this._dropboxSprites,

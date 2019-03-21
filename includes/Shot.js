@@ -1,5 +1,7 @@
 const { Program, Command, LovaClass } = require('lovacli');
 
+const AsyncLimiter = require('./AsyncLimiter.js');
+
 class Shot extends LovaClass { /// LovaClass is also EventEmmiter
     constructor(params = {}) {
         super(params);
@@ -162,38 +164,51 @@ class Shot extends LovaClass { /// LovaClass is also EventEmmiter
 
         this.emit('downloading');
 
+        await AsyncLimiter.start('download');
+
         let downloadResult = null;
         let tries = 0;
         let maxTries = 5;
 
         do {
-            downloadResult = await this._dropboxSprites._dropbox.filesDownload({
-                    path: this.path
-                });
+            try {
+                downloadResult = await this._dropboxSprites._dropbox.filesDownload({
+                        path: this.path
+                    });
+            } catch(e) {
+                downloadResult = null;
+            }
             tries++;
         } while ( (!downloadResult || !downloadResult.fileBinary || !downloadResult.fileBinary.length) && tries < maxTries );
 
         if (downloadResult && downloadResult.fileBinary) {
             // this.logger.debug(downloadResult);
+            try {
+                let downloadFilename = this.timestamp;
+                /// @todo: check if file is already there - add suffix
+                downloadFilename = downloadFilename+'.jpg';
 
-            let downloadFilename = this.timestamp;
-            /// @todo: check if file is already there - add suffix
-            downloadFilename = downloadFilename+'.jpg';
+                let storePath = this.channelDay.getDownloadPath();
 
-            let storePath = this.channelDay.getDownloadPath();
+                this.fs.saveImage(storePath, downloadFilename, downloadResult.fileBinary);
 
-            this.fs.saveImage(storePath, downloadFilename, downloadResult.fileBinary);
+                this.isDownloaded = true;
+                this.isDownloading = false;
+                this.fileName = downloadFilename;
 
-            this.isDownloaded = true;
-            this.isDownloading = false;
-            this.fileName = downloadFilename;
+                this.logger.debug('Successfully downloaded '+this.path+' to '+storePath+'/'+downloadFilename);
 
-            this.logger.debug('Successfully downloaded '+this.path+' to '+storePath+'/'+downloadFilename);
+                this.emit('downloaded');
+            } catch(e) {
 
-            this.emit('downloaded');
+            }
+
+            await AsyncLimiter.end('download');
 
             return true;
         } else {
+            await AsyncLimiter.end('download');
+
             return false;
         }
 	}

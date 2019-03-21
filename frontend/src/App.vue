@@ -177,6 +177,8 @@ export default {
 		restoreLastDate: function() {
 			let lastTimestamp = document.cookie.replace(/(?:(?:^|.*;\s*)lastPlayingDate\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 			if (!lastTimestamp) {
+				this.setDate(new Date());
+
 				return null;
 			}
 			lastTimestamp = parseInt(lastTimestamp, 10);
@@ -184,10 +186,12 @@ export default {
 				let date = new Date(lastTimestamp);
 				this.setDate(date);
 
-				console.log(date);
+				// console.log(date);
 
 				return date;
 			} else {
+				this.setDate(new Date());
+				
 				return null;
 			}
 		},

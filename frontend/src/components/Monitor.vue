@@ -1,5 +1,5 @@
 <template>
-  <div class="monitor" v-bind:style="{ width: computedWidth, height: computedHeight, left: computedLeft, top: computedTop }"><shot ref="current" v-bind:data="currentShotData" v-bind:opacity="currentShotOpacity" v-bind:width="width"  v-bind:height="height" zindex="20001"></shot><shot ref="next" v-bind:data="nextShotData"  v-bind:opacity="nextShotOpacity"  v-bind:width="width"  v-bind:height="height" zindex="20000" ></shot></div>
+  <div class="monitor" v-bind:style="{ width: computedWidth, height: computedHeight, left: computedLeft, top: computedTop }" @click="onClick"><shot ref="current" v-bind:data="currentShotData" v-bind:opacity="currentShotOpacity" v-bind:width="width"  v-bind:height="height" zindex="20001"></shot><shot ref="next" v-bind:data="nextShotData"  v-bind:opacity="nextShotOpacity"  v-bind:width="width"  v-bind:height="height" zindex="20000" ></shot></div>
 </template>
 
 <script>
@@ -41,6 +41,9 @@ export default {
 	    }
 	},
 	methods: {
+		onClick: function() {
+			this.$emit('click');
+		},
 		hasShotsInTheFuture: function() {
 			if (this._newestShotDate > this._date) {
 				return true;

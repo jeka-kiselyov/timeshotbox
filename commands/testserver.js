@@ -2,6 +2,7 @@ const { Program, Command } = require('lovacli');
 
 const DropboxSprites = require('../includes/DropboxSprites.js');
 const Server = require('../includes/Server.js');
+const AsyncLimiter = require('../includes/AsyncLimiter.js');
 
 class Handler extends Command {
     setup(progCommand) {
@@ -45,6 +46,8 @@ class Handler extends Command {
         await server.init();
 
         await ds.getFreshFiles();
+        await AsyncLimiter.waitForEmpty('download');
+        await ds.makeSpritesForAllPreviousDays();
         await ds.removeOldFoldersFromDropBox();
 
         do {
