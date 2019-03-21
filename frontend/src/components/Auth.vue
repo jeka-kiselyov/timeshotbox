@@ -59,8 +59,8 @@ export default {
 	data() {
 		return {
 			isAuthenticated: false,
-			username: 'admin',
-			password: 'admin',
+			username: '',
+			password: '',
 			isLoading: false,
 			error: null,
 			authCode: null
