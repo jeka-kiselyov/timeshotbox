@@ -51,7 +51,7 @@ export default {
 		onMouseleave: function() {
 			this.hoverX = null;
 		},
-		onClick: function() {
+		onClick: function(event) {
 			let x = event.clientX - (this.$el.getBoundingClientRect().left) || null;
 			if (x) {
 				console.log(x);
