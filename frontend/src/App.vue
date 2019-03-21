@@ -258,6 +258,7 @@ export default {
 	}
 
 	input[type=text], input[type=password] {
+		color:#aaaaaa;
 		-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 		-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 		box-shadow:inset 0px 1px 0px 0px #ffffff;
