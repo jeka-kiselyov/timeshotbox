@@ -417,12 +417,14 @@ class Server extends LovaClass { /// LovaClass is also EventEmmiter
 
                 if (image) {
                     if (image.stream) {
-                        res.setHeader('content-type', 'image/jpeg');
+                        res.setHeader('Content-Type', 'image/jpeg');
                         try {
                             image.stream.on('error', function(){
+                                res.setHeader('Cache-Control', 'no-cache');
                                 res.status(404); 
                                 res.end();
                             });
+                            res.setHeader('Cache-Control', 'private, max-age=31536000');
                             image.stream.pipe(res);
                         } catch(e) {
                             throw new errs.NotFoundError('Not found image');  

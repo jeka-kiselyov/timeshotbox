@@ -1,6 +1,6 @@
 {
   "name": "timeshotbox",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Player for motion detection shots of your security camera backup on DropBox",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "blueimp-md5": "^2.10.0",
     "css-loader": "^2.1.1",
     "dropbox": "^4.0.14",
-    "gmsmith": "^1.2.0",
+    "gmsmith": "github:jeka-kiselyov/gmsmith",
     "isomorphic-fetch": "^2.2.1",
     "livereload": "^0.7.0",
     "lovacli": "^0.1.10",
