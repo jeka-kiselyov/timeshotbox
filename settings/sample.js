@@ -10,6 +10,7 @@ module.exports = {
 		longPollTimeout: 60,
 		removeFolderRegex: "^\\/dvr\\/videomotion\\/[0-9]+$",
 		removeFolderIfThereIsNoFileNewerThanXDays: 10,
+		time: 'server', /// 'server' or 'client'. Default is 'server' (dropbox time).
 		channels: [
 			{
 				name: 'CH1',

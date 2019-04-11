@@ -21,7 +21,7 @@ export default {
 			let heightPerChannel = 150 / 4;
 			this.channelsPositions = [];
 			for (let i = 0; i < this.timeframes.length; i++) {
-				let channelsPosition = {x: heightPerChannel*i, height: heightPerChannel*(i+1)};
+				let channelsPosition = {x: heightPerChannel*i, height: heightPerChannel};
 				this.channelsPositions.push(channelsPosition);
 			}
 		}

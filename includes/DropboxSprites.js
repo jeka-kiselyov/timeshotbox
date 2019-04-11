@@ -61,6 +61,11 @@ class DropboxSprites extends LovaClass { /// LovaClass is also EventEmmiter
             this._removeFolderRegex = new RegExp(this._removeFolderRegex);
         }
 
+        this._getDateDropboxField = 'server_modified';
+        if (params.time == 'client') {
+            this._getDateDropboxField = 'client_modified';
+        }
+
         this._accessToken = params.accessToken || null;
         this._longPollTimeout = params.longPollTimeout || 60;
     }
@@ -216,7 +221,7 @@ class DropboxSprites extends LovaClass { /// LovaClass is also EventEmmiter
 
                     // this.logger.debug('Dir '+entry.path_lower+' date: '+lowerDirMostRecentDate);
                 } else if (entry && entry['.tag'] == 'file') {
-                    let date = new Date(entry.server_modified);
+                    let date = new Date(entry[this._getDateDropboxField]);
 
                     for (const [path, pathModifiedDate] of Object.entries(this._dropboxPathes)) {
                         if (entry.path_lower.indexOf(path) === 0) {
