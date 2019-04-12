@@ -15,10 +15,44 @@
 		padding: 0;
 		background: black;
 	}
+
+	#demo_notice {
+		font-size: 14px;
+		font-family: sans-serif;
+		position: fixed;
+		top: 10px;
+		right: 0px;
+		width: 600px;
+		background: white;
+		padding: 10px 10px 0 10px;
+		opacity: 0.95;
+		border-bottom-left-radius: 5px;
+		border-top-left-radius: 5px;
+	}
+
+	#demo_notice p {
+		margin: 0 0 10px 0;
+	}
+
+	#demo_notice a {
+		color: #005;
+		text-decoration: underline;
+	}
+
+	#demo_notice a:hover {
+		text-decoration: none;
+	}
 </style>
 <body>
 	
 	<div id="app"></div>
+
+	<div id="demo_notice">
+		<p><a href="https://github.com/jeka-kiselyov/timeshotbox"><img alt="GitHub stars" src="https://img.shields.io/github/stars/jeka-kiselyov/timeshotbox.svg?style=social"></a></p>
+		<p><a href="https://github.com/jeka-kiselyov/timeshotbox">Timeshotbox</a> demo application. <a href="https://www.dropbox.com/sh/95si4r1nmkk0xg4/AAD7c4wj8t7JKI1lasWAQjRWa?dl=0">DropBox folder</a> with motion detection points used.</p>
+		<p><a href="https://vimeo.com/193273971" target="_blank">Early Bird Cafe - Week one V024</a> video by Cornish Time Passages</p>
+	</div>
+
 	<script type="text/javascript" src="./index.js"></script>
 
 	<script type="text/javascript">
