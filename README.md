@@ -5,9 +5,10 @@ Player for motion detection shots of your security camera backup on DropBox
 
 Built this tool for my set of security cameras in very remote location. Internet connection there is so slow that I can't use it to check and browse video remotely. But there's nice feature in my security system - upload photos to DropBox when motion is detected. So there is a way to browse this motion detection timeframes.
 
-![TimeShotBox Demo](https://raw.githubusercontent.com/jeka-kiselyov/timeshotbox/gh-pages/screen.jpg "TimeShotBox Bird Cafe Demo")
 
-Here you can check the demo in action. It displays key timeframes from [Early Bird Cafe - Week one V024](https://vimeo.com/193273971) video by Cornish Time Passages. You can check keyframes photos on DropBox [here](https://www.dropbox.com/sh/95si4r1nmkk0xg4/AAD7c4wj8t7JKI1lasWAQjRWa?dl=0).
+[![TimeShotBox](https://raw.githubusercontent.com/jeka-kiselyov/timeshotbox/gh-pages/screen.jpg)](https://jeka-kiselyov.github.io/timeshotbox/)
+
+You can [check the demo in action](https://jeka-kiselyov.github.io/timeshotbox/). It displays key timeframes from [Early Bird Cafe - Week one V024](https://vimeo.com/193273971) video by Cornish Time Passages. You can check keyframes photos on DropBox [here](https://www.dropbox.com/sh/95si4r1nmkk0xg4/AAD7c4wj8t7JKI1lasWAQjRWa?dl=0).
 
 ### Build with:
 
