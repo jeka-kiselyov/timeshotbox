@@ -65,6 +65,15 @@ export default {
 		this._date = null;
 	},
 	mounted: function() {
+		let debouncedBeginningHandler = _.debounce(()=>{
+			this.$emit('beginningDone');
+		}, 500);
+
+		this.$refs.monitor1.$on('beginningDone', debouncedBeginningHandler);
+		this.$refs.monitor2.$on('beginningDone', debouncedBeginningHandler);
+		this.$refs.monitor3.$on('beginningDone', debouncedBeginningHandler);
+		this.$refs.monitor4.$on('beginningDone', debouncedBeginningHandler);
+
 		let debouncedDDdaysHandler = _.debounce(()=>{
 			this.$emit('daysDone');
 		}, 500);
@@ -94,6 +103,15 @@ export default {
 		}
 	},
 	methods: {
+		getOldestShotDate: function() {
+			let oldest = null;
+			for (let i = 1; i <= 4; i++) {
+				if (oldest === null || (this.$refs['monitor'+i].getOldestShotDate() !== null && this.$refs['monitor'+i].getOldestShotDate() < oldest) ) {
+					oldest = this.$refs['monitor'+i].getOldestShotDate();
+				}
+			}
+			return oldest;
+		},
 		hasShotsInTheFuture: function() {
 			for (let i = 1; i <= 4; i++) {
 				if (this.$refs['monitor'+i].hasShotsInTheFuture()) {
@@ -126,6 +144,12 @@ export default {
 			ret = ret.concat(this.$refs.monitor1.getDaysWithData(), this.$refs.monitor2.getDaysWithData(), this.$refs.monitor3.getDaysWithData(), this.$refs.monitor4.getDaysWithData());
 			ret = ret.filter((v, i, a) => a.indexOf(v) === i); /// get unique
 			return ret;
+		},
+		goToTheBeginning: function() {
+			this.$refs.monitor1.goToTheBeginning();
+			this.$refs.monitor2.goToTheBeginning();
+			this.$refs.monitor3.goToTheBeginning();
+			this.$refs.monitor4.goToTheBeginning();
 		},
 		setDate: function(date) {
 			this._date = date;

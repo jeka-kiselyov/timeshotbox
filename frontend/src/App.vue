@@ -30,6 +30,7 @@ export default {
 					height: 0
 				}
 			}
+			
 		}
 	},
 	created: function(){
@@ -73,6 +74,9 @@ export default {
 				this.$refs.controls.setDaysWithData(this.$refs.screen.getDaysWithData());
 				this.restoreLastDate();
 			});
+			// this.$refs.screen.$once('dayDone',()=>{
+			// 	this.restoreLastDate();
+			// });
 			this.$refs.screen.$on('dayDone',()=>{
 				this.setDate();
 			});
@@ -171,9 +175,18 @@ export default {
 		restoreLastDate: function() {
 			let lastTimestamp = document.cookie.replace(/(?:(?:^|.*;\s*)lastPlayingDate\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 			if (!lastTimestamp) {
-				this.setDate(new Date());
+				//// jump to the first loaded day
+				///
+				this.$refs.screen.$once('beginningDone',()=>{
+					let firstAvailable = this.$refs.screen.getOldestShotDate();
+					if (!firstAvailable) {
+						firstAvailable = new Date();
+					}
+					this.setDate(firstAvailable);
+				});
+				this.$refs.screen.goToTheBeginning();
 
-				return null;
+				return true;
 			}
 			lastTimestamp = parseInt(lastTimestamp, 10);
 			if (lastTimestamp && lastTimestamp > 0) {
@@ -186,7 +199,7 @@ export default {
 			} else {
 				this.setDate(new Date());
 
-				return null;
+				return firstAvailable;
 			}
 		},
 		play: function() {
@@ -210,7 +223,7 @@ export default {
 
 				if (nextShotTime) {
 					//// little fix to be sure we are not missing short timeframes going right after long ones
-					if (this.date < nextShotTime && nextDate > nextShotTime) {
+					if (this.date < nextShotTime && nextDate >= nextShotTime) {
 						this.date = new Date(nextShotTime.getTime() + 1); /// just a tiny shift to future
 					} else {
 						this.date = nextDate;

@@ -23,6 +23,7 @@ export default {
 		this._days = {};
 		this._diffBetweenShots = null;
 		this._newestShotDate = null;
+		this._oldestShotDate = null;
 
 		this.loadDays();
 	},
@@ -43,6 +44,9 @@ export default {
 	methods: {
 		onClick: function() {
 			this.$emit('click');
+		},
+		getOldestShotDate: function() {
+			return this._oldestShotDate;
 		},
 		hasShotsInTheFuture: function() {
 			if (this._newestShotDate > this._date) {
@@ -124,6 +128,34 @@ export default {
 				this.currentShotOpacity = 0;
 				this.nextShotOpacity = 1;
 			}
+		},
+		goToTheBeginning: function() {
+			let oldestDayString = null;
+			let oldestDate = null;
+
+			for (let dayString in this._days) {
+				let splet = dayString.split('_');
+				if (splet.length === 3) {
+					let date = new Date();
+					date.setUTCFullYear(splet[0]);
+					date.setUTCMonth(splet[1]-1);
+					date.setUTCDate(splet[2]);
+
+					if (oldestDate === null || date < oldestDate) {
+						oldestDate = date;
+						oldestDayString = dayString;
+					}					
+				}
+			}
+
+			if (!oldestDayString) {
+				return null;
+			}
+
+			let waitForDayDataPromise = this.loadDay(oldestDayString);
+			waitForDayDataPromise.then(()=>{
+				this.$emit('beginningDone');
+			});
 		},
 		setDate: function(date) {
 			this._date = date;
@@ -298,9 +330,22 @@ export default {
 					isLoaded: false
 				};
 
+
 				if (!this._days[dayString]) {
 					this._days[dayString] = dayObject;
 				}
+
+				// var splet = dayString.split('_');
+				// if (splet.length === 3) {
+				// 	var date = new Date();
+				// 	date.setUTCFullYear(splet[0]);
+				// 	date.setUTCMonth(splet[1]-1);
+				// 	date.setUTCDate(splet[2]);
+
+				// 	if (this._oldestShotDate === null || date < this._oldestShotDate) {
+				// 		this._oldestShotDate = date;
+				// 	}					
+				// }
 
 				return this._days[dayString];
 			} catch(e) {
@@ -345,6 +390,9 @@ export default {
 					dayObject.shots.push(shotObject);
 					if (this._newestShotDate < shotDate) {
 						this._newestShotDate = shotDate;
+					}				
+					if (this._oldestShotDate === null || this._oldestShotDate < shotDate) {
+						this._oldestShotDate = shotDate;
 					}				
 				}
 				dayObject.hasShots = true;

@@ -410,10 +410,6 @@ li {
   cursor: pointer;
 }
 
-#calendar .choose-day span {
-  color: #fff;
-  background-color: #7373f3;
-}
 
 #calendar .other-month-day span {
   color: #ccc;
@@ -428,5 +424,10 @@ li {
   color: black;
   background-color: #afa;
   border-radius: 0;
+}
+
+#calendar .choose-day span {
+  color: #fff;
+  background-color: #7373f3;
 }
 </style>
