@@ -1,0 +1,67 @@
+[
+    {
+        "name": "id_01_ch_04_001.png",
+        "date": "2019-04-08T22:13:58.000Z",
+        "fileName": "1554761638-1554767499.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 0,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1280,
+            "sHeight": 1080
+        }
+    },
+    {
+        "name": "id_01_ch_04_002.png",
+        "date": "2019-04-08T22:23:50.000Z",
+        "fileName": "1554761638-1554767499.jpg",
+        "spriteCoordinates": {
+            "x": 640,
+            "y": 0,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1280,
+            "sHeight": 1080
+        }
+    },
+    {
+        "name": "id_01_ch_04_003.png",
+        "date": "2019-04-08T23:20:20.000Z",
+        "fileName": "1554761638-1554767499.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 360,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1280,
+            "sHeight": 1080
+        }
+    },
+    {
+        "name": "id_01_ch_04_004.png",
+        "date": "2019-04-08T23:23:11.000Z",
+        "fileName": "1554761638-1554767499.jpg",
+        "spriteCoordinates": {
+            "x": 640,
+            "y": 360,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1280,
+            "sHeight": 1080
+        }
+    },
+    {
+        "name": "id_01_ch_04_005.png",
+        "date": "2019-04-08T23:51:39.000Z",
+        "fileName": "1554761638-1554767499.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 720,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1280,
+            "sHeight": 1080
+        }
+    }
+]

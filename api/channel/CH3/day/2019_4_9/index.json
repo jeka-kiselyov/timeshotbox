@@ -1,0 +1,392 @@
+[
+    {
+        "name": "id_01_ch_03_004.png",
+        "date": "2019-04-09T00:08:16.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 640,
+            "y": 0,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_005.png",
+        "date": "2019-04-09T00:36:30.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 1280,
+            "y": 360,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_006.png",
+        "date": "2019-04-09T00:47:06.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 360,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_007.png",
+        "date": "2019-04-09T01:08:54.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 640,
+            "y": 360,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_008.png",
+        "date": "2019-04-09T01:40:37.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 720,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_009.png",
+        "date": "2019-04-09T01:48:15.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 640,
+            "y": 720,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_010.png",
+        "date": "2019-04-09T02:02:48.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 1280,
+            "y": 0,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_011.png",
+        "date": "2019-04-09T02:48:24.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 0,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_012.png",
+        "date": "2019-04-09T02:58:33.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 1280,
+            "y": 720,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_013.png",
+        "date": "2019-04-09T03:07:57.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 1080,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_014.png",
+        "date": "2019-04-09T03:29:50.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 640,
+            "y": 1080,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_015.png",
+        "date": "2019-04-09T03:36:11.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 1280,
+            "y": 1080,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_016.png",
+        "date": "2019-04-09T03:36:27.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 1440,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_017.png",
+        "date": "2019-04-09T03:47:38.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 640,
+            "y": 1440,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_018.png",
+        "date": "2019-04-09T04:11:38.000Z",
+        "fileName": "1554768496-1554783098.jpg",
+        "spriteCoordinates": {
+            "x": 1280,
+            "y": 1440,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_001.png",
+        "date": "2019-04-09T06:54:29.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 640,
+            "y": 0,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_002.png",
+        "date": "2019-04-09T09:04:59.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 1280,
+            "y": 360,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_003.png",
+        "date": "2019-04-09T10:50:40.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 360,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_004.png",
+        "date": "2019-04-09T10:58:55.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 640,
+            "y": 360,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_005.png",
+        "date": "2019-04-09T11:42:24.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 720,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_006.png",
+        "date": "2019-04-09T11:49:00.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 640,
+            "y": 720,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_007.png",
+        "date": "2019-04-09T12:00:07.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 1280,
+            "y": 0,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_008.png",
+        "date": "2019-04-09T13:56:32.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 0,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_009.png",
+        "date": "2019-04-09T14:11:56.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 1280,
+            "y": 720,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_010.png",
+        "date": "2019-04-09T15:31:02.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 1080,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_011.png",
+        "date": "2019-04-09T17:10:44.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 640,
+            "y": 1080,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_012.png",
+        "date": "2019-04-09T18:12:39.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 1280,
+            "y": 1080,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_013.png",
+        "date": "2019-04-09T18:42:55.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 0,
+            "y": 1440,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_014.png",
+        "date": "2019-04-09T19:17:25.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 640,
+            "y": 1440,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    },
+    {
+        "name": "id_01_ch_03_015.png",
+        "date": "2019-04-09T19:32:22.000Z",
+        "fileName": "1554792869-1554838342.jpg",
+        "spriteCoordinates": {
+            "x": 1280,
+            "y": 1440,
+            "width": 640,
+            "height": 360,
+            "sWidth": 1920,
+            "sHeight": 1800
+        }
+    }
+]
