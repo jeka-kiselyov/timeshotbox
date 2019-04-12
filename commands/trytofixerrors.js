@@ -4,7 +4,7 @@ const DropboxSprites = require('../includes/DropboxSprites.js');
 
 class Handler extends Command {
     async setup(progCommand) {
-        progCommand.description('vodochka');
+        progCommand.description('Try to fix errors on broken local data');
     }
 
     async description() {

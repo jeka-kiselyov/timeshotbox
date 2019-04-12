@@ -6,7 +6,7 @@ const AsyncLimiter = require('../includes/AsyncLimiter.js');
 
 class Handler extends Command {
     setup(progCommand) {
-        progCommand.description('Test server');
+        progCommand.description('Sync with dropbox and start local server');
     }
 
     async handle(args, options, logger) {
