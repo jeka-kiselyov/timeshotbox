@@ -12,6 +12,7 @@ Here you can check the demo in action. It displays key timeframes from [Early Bi
 ### Build with:
 
  - node.js
+ - [lovacli](https://github.com/jeka-kiselyov/lovacli)
  - Restify
  - Vue.js
 
