@@ -153,7 +153,7 @@ class ChannelDay extends LovaClass { /// LovaClass is also EventEmmiter
 		this.logger.debug('Creating sprite out of '+shots.length+' shots');
 
 		let promise = new Promise((resolve, reject)=>{
-			Spritesmith.run({src: absoluteFileNames, engine: require('gmsmith'), exportOpts: {progressive: true, format: 'jpg', quality: 60}}, function handleResult (err, result) {
+			Spritesmith.run({src: absoluteFileNames, engine: require('gmsmith'), exportOpts: {format: 'jpg', quality: 60}}, function handleResult (err, result) {
 				if (err) {
 					reject(err);
 				} else {

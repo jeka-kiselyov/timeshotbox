@@ -404,7 +404,7 @@ export default {
 			var vm = this;
 
 			return new Promise((resolve, reject)=>{
-				axios.get('/api/channel/'+this.channel)
+				axios.get('/api/channel/'+this.channel+'/index.json')
 					.then(function(response) {
 						if (response.data) {
 							for (var dayString of response.data) {
@@ -444,7 +444,7 @@ export default {
 			}
 
 			return new Promise((resolve, reject)=>{
-				axios.get('/api/channel/'+this.channel+'/day/'+dayString)
+				axios.get('/api/channel/'+this.channel+'/day/'+dayString+'/index.json')
 					.then(function(response) {
 						if (response.data) {
 							for (var shot of response.data) {

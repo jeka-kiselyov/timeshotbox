@@ -105,6 +105,8 @@ class Server extends LovaClass { /// LovaClass is also EventEmmiter
 
             this._server.get('/api/channel/:channel', this.asyncWrap(this.channel, true));
             this._server.get('/api/channel/:channel/day/:day', this.asyncWrap(this.channelDay, true));
+            this._server.get('/api/channel/:channel/index.json', this.asyncWrap(this.channel, true));
+            this._server.get('/api/channel/:channel/day/:day/index.json', this.asyncWrap(this.channelDay, true));
             this._server.get('/api/channel/:channel/day/:day/:filename', this.asyncWrap(this.channelDayFile, true));
 
             this._server.listen(this._port, ()=>{
